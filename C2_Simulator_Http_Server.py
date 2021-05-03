@@ -3,7 +3,7 @@
 '''
 Author: AGDC Services
 Website: AGDCservices.com
-Date: 20191116
+Date: 20210503
 
 
 This is a Command and Control (C2) simulator for HTTP traffic
@@ -30,14 +30,19 @@ import cgi
 The following two variables are only needed if TLS is enabled
 
 
-Usage:
+Details:
     - Create the key and cert on the host where this script will be run
     - fill in the variables below with the key / cert paths
     - set the bDoTls variable in the main function to True
 
 one method to create a TLS key / cert is to use openssl on linux with the following commands
+all of the default options can be used when creating the x509 certificate
 - openssl genpkey - out <fileName> -algorithm RSA -pkeyopt rsa_keygen_bits:<keyLen in bits>
 - openssl req -new -x509 -key <key filePath> -days 7200 -out <fileName>
+
+example:
+    openssl genpkey - out key.pem -algorithm RSA -pkeyopt rsa_keygen_bits:2048
+    openssl req -new -x509 -key key.pem -days 7200 -out cert.cert
 '''
 
 gTlsKeyFilePath = ''
