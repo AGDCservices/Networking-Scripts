@@ -37,11 +37,11 @@ Details:
 
 one method to create a TLS key / cert is to use openssl on linux with the following commands
 all of the default options can be used when creating the x509 certificate
-- openssl genpkey - out <fileName> -algorithm RSA -pkeyopt rsa_keygen_bits:<keyLen in bits>
+- openssl genpkey -out <fileName> -algorithm RSA -pkeyopt rsa_keygen_bits:<keyLen in bits>
 - openssl req -new -x509 -key <key filePath> -days 7200 -out <fileName>
 
 example:
-    openssl genpkey - out key.pem -algorithm RSA -pkeyopt rsa_keygen_bits:2048
+    openssl genpkey -out key.pem -algorithm RSA -pkeyopt rsa_keygen_bits:2048
     openssl req -new -x509 -key key.pem -days 7200 -out cert.cert
 '''
 
